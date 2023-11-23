@@ -16,7 +16,7 @@
         </style>
 
         <meta name="theme-color" content="#6777ef"/>
-        <link rel="icon"  href="{{ asset('logo.PNG') }}" type="image/png">
+        <link rel="icon"  href="{{ asset('logo.png') }}" type="image/png">
         <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
     </head>
