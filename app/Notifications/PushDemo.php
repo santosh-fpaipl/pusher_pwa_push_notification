@@ -7,6 +7,8 @@ use NotificationChannels\WebPush\WebPushMessage;
 use NotificationChannels\WebPush\WebPushChannel;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
 
 class PushDemo extends Notification
 {
@@ -26,6 +28,7 @@ class PushDemo extends Notification
     public function toWebPush($notifiable, $notification)
     {
        \Log::info($notifiable->name);
+       Mail::to('backendsr1@gmail.com')->send(new TestMail());
         return (new WebPushMessage)
             ->title('Hello '.$notifiable->name)
             ->icon('/notification-icon.png')
